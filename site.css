@@ -1,38 +1,211 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Nanum+Myeongjo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montez&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200&display=swap');
+
 body {
-    background-color: blue ;
+  background-color: black ;
 }
+
+@media only screen and (max-width: 1000px) {
+  .menu {
+    flex-direction: column;
+    text-align: center;
+  }
+  .main-text {
+    font-size: 5.5rem !important;
+  }
+  a {
+    font-size: 2rem !important;
+  }
+  .image-container img {
+    width: 90% !important;
+  }
+}
+
+@media only screen and (max-width: 1450px) {
+  .logo {
+    font-size: 3.5rem !important;
+  }
+}
+
+.fancy-text {
+  font-family: 'Aldrich', sans-serif;
+  font-size: 2rem;
+}
+
+.main-text {
+  /*font-family: 'Montez', cursive;*/
+  font-family: 'Pinyon Script', cursive;
+  font-size: 7rem;
+}
+
+.logo {
+  /*font-family: 'Montez', cursive;*/
+  font-family: 'Pinyon Script', cursive;
+  font-size: 7rem;
+}
+
 #background-video {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: -1;
-    filter: brightness(75%);
-  }
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  filter: brightness(75%);
+}
 
-  .fade-in-out-background {
-    animation: fade-in-background 1.5s, fade-out-background 2.5s 1s ease-out forwards;
-  }
+.image-container img{
+  filter: brightness(60%);
+}
+.image-container {
+  position: relative;
+  text-align: center;
+  color: white;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 2vw;
+}
 
-  @keyframes fade-in-background {
-    100% {
-      opacity: 1;
+.image-container img {
+  width: 33%;
+}
+
+.image-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.fade-in-out-background {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  animation: fade-out-background 1s ease 3.5s forwards;
+}
+@keyframes fade-out-background {
+  0% {
+    opacity: 1;
+  }
+  100% {
+      max-height: 0px;
+      opacity: 0;
     }
+}
+.break {
+  flex-basis: 100%;
+  height: 0;
+}
+
+a {
+  color: white;
+  font-size: 2rem;
+  margin: 20px;
+  font-family: 'Aldrich', sans-serif;
+  background-image: linear-gradient(
+    to right,
+    #54b3d6,
+    #54b3d6 50%,
+    #ffffff 50%
+  );
+  background-size: 200% 100%;
+  background-position: -100%;
+  display: inline-block;
+  padding: 5px 0;
+  position: relative;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+a:before{
+  content: '';
+  background: #54b3d6;
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+ background-position: 0;
+}
+
+a:hover::before{
+  width: 100%;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column div {
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+  padding: 5px;
+  transition: 1.2s all ease-in-out;
+}
+
+.column img:hover {
+  transform: scale(1.2);
+}
+
+
+.break {
+  flex-basis: 100%;
+  height: 0;
+}
+
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
   }
   
-  @keyframes fade-out-background {
-    0% {
-      opacity: 1;
-    }
-    80% {
-      opacity: 1;
-    }
-    100% {
-        opacity: 0;
-      }
-  }
+}
 
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+  
+}
