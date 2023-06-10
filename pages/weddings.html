@@ -9,6 +9,8 @@
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/1ad76a296a.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" type="text/css" href="../site.css">
     <title>Photography</title>
   </head>
@@ -19,7 +21,7 @@
 
   </style>
 <body>
-
+<div id="app">
   <!-- Navigation Menu -->
   <nav class="align-items-center nav-container container navbar navbar-expand-xl navbar-dark p-3 pb-3">
 
@@ -28,6 +30,7 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
 
       <div class="collapse navbar-collapse" id="navbar">
         <ul class="navbar-nav ms-auto" style="font-size: .5rem !important;">
@@ -50,20 +53,44 @@
   <div class="container mb-5">
     <h1 class="text-center text-white fancy-text">WEDDINGS</h1>
   </div>
-
-
-
-  <div class="d-flex">
-    
-        <div class="image-container text-center">
-          <img src="../images/makayla&andrew.jpg">
-          <p class="image-center">MAKAYLA + ANDREW<br>MAY 27TH, 2023</p>
+  <div class="container">
+    <div class="row">
+      <div v-for="item in weddings" class="overflow col-lg-6 col-sm-12 animate__animated animate__fadeIn animate__slower">
+        <div class="image-container">
+          <img :src="item.image" class="w-100 rounded" :alt="item.name"/>
+          <p class="image-center">{{item.name}}<br>{{item.date}}</p>
         </div>
-
-        <div class="image-container text-center">
-            <img src="../images/lauren&ryen.png">
-            <p class="image-center">MAKAYLA + ANDREW<br>MAY 27TH, 2023</p>
-        </div>
-    </div>
+      </div>
+  </div>
+</div>
+</div>
+  <script>
+    const app = Vue.createApp({
+        data() {
+            return {
+                mainPhoto : undefined,
+                weddings :[
+                  {
+                    name : "MAKAYLA + ANDREW",
+                    date : "MAY 27TH, 2023",
+                    image : "../images/makayla&andrew.jpg"
+                  },
+                  {
+                    name : "LAUREN + RYEN",
+                    date : "JUNE 5TH, 2023",
+                    image : "../images/lauren&ryen.jpg"
+                  },
+                ]
+            }
+        },
+  
+        methods: {
+            showPhoto(event) {
+              this.mainPhoto = event.target.src;
+            }
+          },
+        
+    }).mount('#app');
+  </script>
 </body>
 </html>
