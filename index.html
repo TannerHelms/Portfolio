@@ -13,21 +13,30 @@
   <body>
     <div class="d-flex  align-items-center justify-content-center animate__animated  animate__fadeIn animate__slower" style="height: 100vh; flex-direction: column;">
       <h1 class="text-white main-text text-center">Tanner Helms</h1>
-      <div class="d-flex menu">
-        <a href="pages/photography.html">PHOTOGRPHY</a>
-        <a href="pages/weddings.html">WEDDINGS</a>
-        <a href="">COPORATE</a>
-        
+  <nav class="align-items-center navbar navbar-expand-xl navbar-dark p-3 pb-3 mb-5">
+        <ul class="navbar-nav ms-auto">
+          <li>
+            <a href="pages/about.html">About Me</a>
+          </li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Services
+            </a>
+            <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink" style="position: absolute !important;">
+              <a href="pages/photography.html">Photography</a>
+              <a href="pages/weddings.html">Weddings</a>
+              <a href="#">Corporate</a>
+            </div>
+          </li>
+          <li>
+            <a href="pages/contact.html">Contact Us</a>
+          </li>
+        </ul>
       </div>
-    </div>
+    </nav>
+
     <video id="background-video" autoplay loop muted>
         <source id="bgvideo" src="videos/website.mp4" type="video/mp4">
     </video>
-    <script>
-      var video =  document.getElementById("bgvideo");
-      video.addEventListener('loadeddata', function() {
-      alert("loaded")
-    }, false);
-    </script>
   </body>
 </html>
