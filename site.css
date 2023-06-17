@@ -167,10 +167,16 @@ a:hover::before{
 
 /* Create four equal columns that sits next to each other */
 .column {
-  -ms-flex: 25%; /* IE10 */
-  flex: 25%;
-  max-width: 25%;
+  -ms-flex: calc(25% - 20px); /* IE10 */
+  flex: calc(25% - 20px);
+  max-width: calc(25% - 20px);
   padding: 0 4px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#img-container {
+  margin-bottom: 20px;
 }
 
 .column div {
@@ -194,19 +200,28 @@ a:hover::before{
   height: 0;
 }
 
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 1400px) {
+  .column {
+    -ms-flex: calc(33% - 20px);
+    flex: calc(33% - 20px);
+    max-width: calc(33% - 20px);
+  }
+  
+}
 
 /* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
   .column {
-    -ms-flex: 50%;
-    flex: 50%;
-    max-width: 50%;
+    -ms-flex: calc(50% - 20px);
+    flex: calc(50% - 20px);
+    max-width: calc(50% - 20px);
   }
   
 }
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .column {
     -ms-flex: 100%;
     flex: 100%;

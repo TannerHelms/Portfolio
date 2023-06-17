@@ -12,7 +12,7 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" type="text/css" href="../site.css">
-    <title>Photography</title>
+    <title>Weddings</title>
   </head>
   <style>
     a {
@@ -47,12 +47,14 @@
             <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
               <a href="photography.html" class="nav-link">Photography</a>
               <a href="weddings.html" class="nav-link">Weddings</a>
-              <a href="#" class="nav-link">Corporate</a>
+              <a href="coporate.html" class="nav-link">Corporate</a>
             </div>
           </li>
+          <!--
           <li class="nav-item">
             <a href="contact.html" class="nav-link">Contact Us</a>
           </li>
+        -->
         </ul>
       </div>
     </div>
@@ -63,9 +65,9 @@
   </div>
   <div class="container">
     <div class="row d-flex justify-content-center">
-      <div v-for="item in weddings" class="overflow col-lg-5 col-sm-12 animate__animated animate__fadeIn animate__slower m-2" type="button" @click="showPhoto(item)" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <div v-for="item in weddings" class="rounded overflow col-lg-5 col-sm-12 animate__animated animate__fadeIn animate__slower m-2" type="button" @click="showPhoto(item)" data-bs-toggle="modal" data-bs-target="#exampleModal">
         <div class="image-container">
-          <img :src="item.image" class="w-100 rounded" :alt="item.name"/>
+          <img :src="item.image" class="w-100" :alt="item.name"/>
           <p class="image-center">{{item.name}}<br>{{item.date}}</p>
         </div>
       </div>
