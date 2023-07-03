@@ -3,13 +3,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Montez&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200&family=Quicksand:wght@300&display=swap');
 body {
   margin: 0 !important;
   background-color: black;
 }
 
+.weddingtxt {
+  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Quicksand', sans-serif;
+}
+
 .sans {
   font-family: montserrat,sans-serif;
+}
+
+hr {
+  width: 80% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  color: #FFFFFF !important;
+  height: 2px !important;
+  border-color: #FFFFFF;
 }
 
 .sans2 {
@@ -82,9 +97,7 @@ body {
   min-height: 100%
 }
 
-.mySlides img {
-  filter: brightness(65%);
-}
+
 
 .image-container img{
   filter: brightness(65%);
