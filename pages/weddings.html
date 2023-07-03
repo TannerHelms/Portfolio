@@ -12,6 +12,7 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" type="text/css" href="../site.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <title>Weddings</title>
   </head>
   <style>
@@ -25,7 +26,6 @@
   <!-- Navigation Menu -->
   <nav class="align-items-center navbar navbar-expand-xl navbar-dark p-3 pb-3 fixed-top mb-5" style="background-color: rgba(0, 0, 0, 0.85)">
     <div class="container">
-
       <h1 class="text-white logo" style="font-size: 4rem;">Tanner Scott</h1>
       
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,17 +40,17 @@
           <li class="nav-item">
             <a href="about.html" class="nav-link">About Me</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Services
-            </a>
-            <div class="dropdown-menu bg-dark align-content-center" aria-labelledby="navbarDropdownMenuLink">
-              <a href="photography.html" class="nav-link">Photography</a>
-              <a href="weddings.html" class="nav-link">Weddings</a>
-              <a href="coporate.html" class="nav-link">Corporate</a>
-            </div>
+          <li class="nav-item">
+            <a href="photography.html" class="nav-link">Photography</a>
           </li>
-          <!--
+          <li class="nav-item">
+            <a href="weddings.html" class="nav-link">Weddings</a>
+          </li>
+          <li class="nav-item">
+            <a href="corporate.html" class="nav-link">Corporate</a>
+          </li>
+          
+         <!--
           <li class="nav-item">
             <a href="contact.html" class="nav-link">Contact Us</a>
           </li>
@@ -61,18 +61,49 @@
     </nav>
 
   <div class="container" style="margin-top: 150px">
-    <h1 class="text-center text-white fancy-text">WEDDINGS</h1>
+    <h1 class="text-center text-white sans mb-2" style="letter-spacing: 1.2rem; font-size: 1.2rem;">- WEDDINGS -</h1>
   </div>
   <div class="container">
     <div class="row d-flex justify-content-center">
+      <!-- Start of the pricing-->
+      <div class="rounded overflow col-lg-5 col-sm-12 animate__animated animate__fadeIn animate__slower m-2" type="button" @click="showVideo('https://www.youtube.com/embed/gUR5WcuK3DE?&autoplay=1&playsinline=1')" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <div class="image-container">
+          <img src="../images/makayla&andrew.jpg" class="w-100" alt="Makayla&Andrew"/>
+          <p class="image-center">Makayla + Andrew<br>MAY 27TH, 2023</p>
+        </div>
+      </div>
+      <p class="sans2 text-white" style="font-size: 1.3rem;">Have you ever had someone tell you that your wedding day will go by fast? Well, it's true. But it's not just any other day, is it? It's your day.  And that day is made up of so many moments - some big, some small. I want to capture the sweet moments, the silly moments, the epic moments - all the things that make your day one to remember for years to come.</p>
+      <h1 class="text-center text-white sans mb-2" style="letter-spacing: 1.2rem; font-size: 1.2rem;">- HIGHLIGHTS -</h1>
+      <div class="w3-content w3-display-container">
+
+        <div v-for="item in weddings" class="w3-display-container mySlides" style="cursor: pointer;">
+          <img :src="item.image" class="w-100" :alt="item.name"/>
+          <p class="image-center">{{item.name}}<br>{{item.date}}</p>
+        </div>      
+        
+        <button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
+        
+        </div>
+        
+      <!-- End of pricing-->
+      <!-- Start of the for if
       <div v-for="item in weddings" class="rounded overflow col-lg-5 col-sm-12 animate__animated animate__fadeIn animate__slower m-2" type="button" @click="showPhoto(item)" data-bs-toggle="modal" data-bs-target="#exampleModal">
         <div class="image-container">
           <img :src="item.image" class="w-100" :alt="item.name"/>
           <p class="image-center">{{item.name}}<br>{{item.date}}</p>
         </div>
       </div>
+      End of the for if-->
 
     </div>
+</div>
+<div class="rounded overflow col-lg-5 col-sm-12 animate__animated animate__fadeIn animate__slower m-2 text-white sans2">
+  <h3 class="text-white" style="margin-left: 10%;">Base Package $999</h3>
+  <br>
+  <div style="margin-left: 20%;">
+    <p>8 Hours of Coverage<br><br>5 Minute Cinematic Film<br><br>1 Minute Highlight<br><br>Vows + Speeches Audio<br><br>Online Delivery + Wedding Box</p>
+  </div>
 </div>
 
 
@@ -106,41 +137,36 @@
             return {
                 mainVideo : undefined,
                 weddings :[
-                  {
-                    name : "MAKAYLA + ANDREW",
-                    date : "MAY 27TH, 2023",
-                    image : "../images/makayla&andrew.jpg",
-                    video: "https://www.youtube.com/embed/gUR5WcuK3DE?&autoplay=1&playsinline=1",
-                  },
-                  {
-                    name : "CODY + KAIYA",
-                    date : "JULY 6TH, 2023",
-                    image : "../images/cody&kaiya.jpg",
-                    video: "https://www.youtube.com/embed/o0EvfvveYik?&autoplay=1&playsinline=1",
-                  },
+                 
                   {
                     name : "ERIN + STEVEN",
                     date : "JUNE 2ND, 2023",
-                    image : "../images/erin&steven.jpg",
+                    image : "../images/Wedding/Erin&Steven.webp",
                     video: undefined,
                   },
                   {
                     name : "LAUREN + RYEN",
                     date : "JUNE 5TH, 2023",
-                    image : "../images/lauren&ryen.jpg",
+                    image : "../images/Wedding/Lauren&Ryen.webp",
                     video: undefined,
                   },
                   {
                     name : "VANCE + RACHEL",
                     date : "JUNE 21ST, 2023",
-                    image : "../images/rachel&vance.jpg",
+                    image : "../images/Wedding/Rachel&Vance.webp",
                     video: undefined,
                   },
                   {
                     name : "TODD + NIKKI",
                     date : "JUNE 24TH, 2023",
-                    image : "../images/nikki&todd.png",
+                    image : "../images/Wedding/Nikki&Tood.webp",
                     video: undefined,
+                  },
+                  {
+                    name : "CODY + KAIYA",
+                    date : "JULY 6TH, 2023",
+                    image : "../images/Wedding/Cody&Kaiya.webp",
+                    video: "https://www.youtube.com/embed/o0EvfvveYik?&autoplay=1&playsinline=1",
                   },
                 ]
             }
@@ -157,5 +183,24 @@
         
     }).mount('#app');
   </script>
+  <script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+    
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+    
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      if (n > x.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = x.length}
+      for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";  
+      }
+      x[slideIndex-1].style.display = "block";  
+    }
+    </script>
 </body>
 </html>

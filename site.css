@@ -8,16 +8,27 @@ body {
   background-color: black;
 }
 
+.sans {
+  font-family: montserrat,sans-serif;
+}
+
+.sans2 {
+  font-family: museo-slab-w01-100,museo-slab-w05-100,serif;
+}
+
 @media only screen and (max-width: 1000px) {
-  .menu {
-    flex-direction: column;
-    text-align: center;
-  }
   .main-text {
     font-size: 5.5rem !important;
   }
   a {
     font-size: 2rem !important;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .menu {
+    flex-direction: column;
+    text-align: center;
   }
 }
 
@@ -60,6 +71,21 @@ body {
   
 }
 
+.mySlides {
+  position: relative;
+  text-align: center;
+  color: white;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 1.5rem;
+  transition: 1.2s all ease-in-out;
+  min-width: 100%;
+  min-height: 100%
+}
+
+.mySlides img {
+  filter: brightness(65%);
+}
+
 .image-container img{
   filter: brightness(65%);
 }
@@ -74,6 +100,17 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+@keyframes fade-out {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+    display: none;
+  }
+}
+
+
 .fade-in-out-background {
   position: fixed;
   top: 50%;

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="site.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <style>
   body {
@@ -20,30 +21,52 @@
   }
 </style>
   <body>
-    <div class="d-flex  align-items-center justify-content-center animate__animated  animate__fadeIn animate__slower" style="height: 100vh; flex-direction: column;">
-      <h1 class="text-white main-text text-center">Tanner Scott</h1>
-  <nav class="align-items-center navbar navbar-expand-xl navbar-dark p-3 pb-3 mb-5">
-        <ul class="navbar-nav ms-auto">
-          <li>
-            <a href="pages/about.html">About Me</a>
-          </li>
-          <li class="dropdown">
-            <a class="dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Services
-            </a>
-            <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink" style="position: absolute !important;">
-              <a href="pages/photography.html">Photography</a>
-              <a href="pages/weddings.html">Weddings</a>
-              <a href="pages/coporate.html">Corporate</a>
-            </div>
-          </li>
-          <!--
-          <li>
-            <a href="pages/contact.html">Contact Us</a>
-          </li>
-        -->
-        </ul>
+    <div id="app">
+      <div id="main" v-if="firstmenu" class="d-flex align-items-center justify-content-center animate__animated animate__fadeIn animate__slower" style="height: 100vh; flex-direction: column;">
+        <h1 class="text-white main-text text-center">Tanner Scott</h1>
+        <nav class="align-items-center navbar navbar-expand-xl navbar-dark p-3 pb-3 mb-5">
+          <ul class="navbar-nav ms-auto">
+            <li>
+              <a href="pages/about.html">About Me</a>
+            </li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" @click="hidediv" style="cursor: pointer;">
+                Services
+              </a>
+            </li>
+            <!--
+              <li>
+                <a href="pages/contact.html">Contact Us</a>
+              </li>
+            -->
+          </ul>
+        </nav>
       </div>
-    </nav>
+      <div v-else class="menu d-flex align-items-center justify-content-center animate__animated animate__fadeIn animate__slower" style="height: 100vh;">
+        <a href="pages/photography.html">Photography</a>
+        <a href="pages/weddings.html">Weddings</a>
+        <a href="pages/corporate.html">Corporate</a>
+        <a @click="showdiv" style="cursor: pointer;">Back</a>
+      </div>
+    </div>
+   
+    <script>
+      const app = Vue.createApp({
+          data() {
+              return {
+                 firstmenu: true,
+              }
+          },
+    
+          methods: {
+              hidediv(item) {
+                this.firstmenu = false;
+              },
+              showdiv() {
+                this.firstmenu = true;
+              }
+            },
+      }).mount('#app');
+    </script>
   </body>
 </html>
