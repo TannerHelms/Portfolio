@@ -27,12 +27,15 @@
         <nav class="align-items-center navbar navbar-expand-xl navbar-dark p-3 pb-3 mb-5">
           <ul class="navbar-nav ms-auto">
             <li>
-              <a href="pages/about.html">About Me</a>
+              <a href="pages/about.html" class="nav-link">About Me</a>
             </li>
             <li class="dropdown">
-              <a class="dropdown-toggle" @click="hidediv" style="cursor: pointer;">
+              <a class="dropdown-toggle nav-link" @click="hidediv" style="cursor: pointer;">
                 Services
               </a>
+            </li>
+            <li>
+              <a href="pages/contact.html" class="nav-link">Contact</a>
             </li>
             <!--
               <li>
@@ -43,10 +46,10 @@
         </nav>
       </div>
       <div v-else class="menu d-flex align-items-center justify-content-center animate__animated animate__fadeIn animate__slower" style="height: 100vh;">
-        <a href="pages/photography.html">Photography</a>
-        <a href="pages/weddings.html">Weddings</a>
-        <a href="pages/corporate.html">Corporate</a>
-        <a @click="showdiv" style="cursor: pointer;">Back</a>
+        <a href="pages/photography.html" class="nav-link">Photography</a>
+        <a href="pages/weddings.html" class="nav-link">Weddings</a>
+        <a href="pages/corporate.html" class="nav-link">Corporate</a>
+        <a @click="showdiv" style="cursor: pointer;" class="nav-link">Back</a>
       </div>
     </div>
    

@@ -12,6 +12,7 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" type="text/css" href="../site.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <title>Corporate</title>
   </head>
   <style>
@@ -23,56 +24,69 @@
 <body>
 <div id="app">
   <!-- Navigation Menu -->
-  <nav class="align-items-center navbar navbar-expand-xl navbar-dark p-3 pb-3 fixed-top mb-5" style="background-color: rgba(0, 0, 0, 0.85)">
-    <div class="container">
-      <h1 class="text-white logo" style="font-size: 4rem;">Tanner Scott</h1>
-      
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      
-      <div class="collapse navbar-collapse" id="navbar">
-        <ul class="navbar-nav ms-auto" style="font-size: .5rem !important;">
-          <li class="nav-item">
-            <a href="../index.html" class="nav-link">Home</a>
-          </li>
-          <li class="nav-item">
-            <a href="about.html" class="nav-link">About Me</a>
-          </li>
-          <li class="nav-item">
-            <a href="photography.html" class="nav-link">Photography</a>
-          </li>
-          <li class="nav-item">
-            <a href="weddings.html" class="nav-link">Weddings</a>
-          </li>
-          <li class="nav-item">
-            <a href="corporate.html" class="nav-link">Corporate</a>
-          </li>
-          
-         <!--
-          <li class="nav-item">
-            <a href="contact.html" class="nav-link">Contact Us</a>
-          </li>
-        -->
-        </ul>
-      </div>
+ <!-- Navigation Menu -->
+ <nav class="align-items-center navbar navbar-expand-xxl navbar-dark p-3 pb-3 fixed-top mb-5" style="background-color: rgba(0, 0, 0, 0.85)">
+  <div class="container">
+    <h1 class="text-white logo" style="font-size: 4rem; cursor: pointer;"><a style="all: unset; font-size: 4rem !important" href="../index.html">Tanner Scott</a></h1>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbar">
+      <ul class="navbar-nav ms-auto" style="font-size: .5rem !important;">
+        <li class="nav-item">
+          <a href="about.html" class="nav-link">About Me</a>
+        </li>
+        <li class="nav-item">
+          <a href="photography.html" class="nav-link">Photography</a>
+        </li>
+        <li class="nav-item">
+          <a href="weddings.html" class="nav-link">Weddings</a>
+        </li>
+        <li class="nav-item">
+          <a href="corporate.html" class="nav-link">Corporate</a>
+        </li>
+        <li class="nav-item">
+          <a href="contact.html" class="nav-link">Contact</a>
+        </li>
+        
+       <!--
+        <li class="nav-item">
+          <a href="contact.html" class="nav-link">Contact Us</a>
+        </li>
+      -->
+      </ul>
     </div>
-    </nav>
+  </div>
+  </nav>
 
   <div class="container" style="margin-top: 150px">
-    <h1 class="text-center text-white fancy-text">CORPORATE</h1>
-  </div>
-  <div class="container">
+    <h1 class="text-center text-white fancy-text">We bring your Brand to Life</h1>
+ </div>
+ <div class="w3-content w3-display-container" id="app">
     <div class="row d-flex justify-content-center">
-      <div v-for="item in weddings" class="rounded overflow col-lg-5 col-sm-12 animate__animated animate__fadeIn animate__slower m-2" type="button" @click="showPhoto(item)" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        <div class="image-container">
-          <img :src="item.image" class="w-100" :alt="item.name"/>
-          <p class="image-center">{{item.name}}<br>{{item.date}}</p>
-        </div>
-      </div>
-
+       <div class="col-lg-12 col-sm-12 animate__animated animate__fadeIn animate__slower m-2">
+          <p class="text-white weddingtxt w3-justify mx-2" style="font-size: 1.4rem;">
+            Would you like to stand out from the competition and impress your audience with video that pops and drives people to action?
+    <br><br>
+    Whether it’s exciting videos for your website or attention grabbing creative for your digital marketing and advertising, we work with your business to engage potential customers with the power of video. We can present your products or services with excitement and emotion. That’s the power of video!
+          </p>
+       </div>
+       <div class="overflow col-lg-5 col-sm-12 animate__animated animate__fadeIn animate__slower align-items-center h-100 mx-4 my-2 rounded">
+        <div class="image-container" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" @click="showPhoto('https://www.youtube.com/embed/YJjN8WPO6Es?&autoplay=1&playsinline=1')">
+          <img src="../images/Corporate/seldovia.jpg" class="w-100" alt="City of Seldovia">
+          <p class="image-center">City of Seldovia<br>June 13, 2023</p></div>
+       </div>
+       <div class="overflow col-lg-5 col-sm-12 animate__animated animate__fadeIn animate__slower align-items-center h-100 mx-4 my-2 rounded">
+        <div class="image-container" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" @click="showPhoto('https://www.youtube.com/embed/G4GG0JC9v4M?&autoplay=1&playsinline=1')">
+          <img src="../images/Corporate/nikiski.jpg" class="w-100" alt="City of Seldovia">
+          <p class="image-center">Nikiski Senior Centor<br>JJune 7th, 2023</p></div>
+       </div>
     </div>
-</div>
+    <div class="justify-content-center w3-center mb-5">
+      <button class="btn btn-primary text-center w-100 my-2"><a href="contact.html" style="all: unset;">Get a Quote!</a></button>
+      </div>
+ </div>
 
 
 <!-- Modal -->
@@ -101,26 +115,12 @@
         data() {
             return {
                 mainVideo : undefined,
-                weddings :[
-                  {
-                    name : "City of Seldovia",
-                    date : "June 13, 2023",
-                    image : "../images/Corporate/seldovia.jpg",
-                    video: "https://www.youtube.com/embed/YJjN8WPO6Es?&autoplay=1&playsinline=1",
-                  },
-                  {
-                    name : "Nikiski Senior Center",
-                    date : "June 7th, 2023",
-                    image : "../images/Corporate/nikiski.jpg",
-                    video: "https://www.youtube.com/embed/G4GG0JC9v4M?&autoplay=1&playsinline=1",
-                  },
-                ]
             }
         },
   
         methods: {
-            showPhoto(item) {
-              this.mainVideo = item.video;
+            showPhoto(link) {
+              this.mainVideo = link;
             },
             pause() {
               this.mainVideo = undefined;
