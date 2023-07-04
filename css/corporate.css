@@ -1,0 +1,17 @@
+@media only screen and (max-width: 1000px) {
+    .rounded {
+        width: 100% !important;
+        border-radius: 0 !important;
+    }
+    .justify-content-between{
+        flex-direction: column;
+    }
+    .btn {
+        border-radius: 0 !important;
+    }
+  }
+
+  .rounded {
+    width: 49%;
+    margin-bottom: 1rem !important;
+  }

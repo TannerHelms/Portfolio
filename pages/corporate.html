@@ -12,6 +12,7 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" type="text/css" href="../site.css">
+    <link rel="stylesheet" type="text/css" href="../css/corporate.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <title>Corporate</title>
   </head>
@@ -72,19 +73,21 @@
     Whether it’s exciting videos for your website or attention grabbing creative for your digital marketing and advertising, we work with your business to engage potential customers with the power of video. We can present your products or services with excitement and emotion. That’s the power of video!
           </p>
        </div>
-       <div class="overflow col-lg-5 col-sm-12 animate__animated animate__fadeIn animate__slower align-items-center h-100 mx-4 my-2 rounded">
-        <div class="image-container" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" @click="showPhoto('https://www.youtube.com/embed/YJjN8WPO6Es?&autoplay=1&playsinline=1')">
-          <img src="../images/Corporate/seldovia.jpg" class="w-100" alt="City of Seldovia">
-          <p class="image-center">City of Seldovia<br>June 13, 2023</p></div>
-       </div>
-       <div class="overflow col-lg-5 col-sm-12 animate__animated animate__fadeIn animate__slower align-items-center h-100 mx-4 my-2 rounded">
-        <div class="image-container" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" @click="showPhoto('https://www.youtube.com/embed/G4GG0JC9v4M?&autoplay=1&playsinline=1')">
-          <img src="../images/Corporate/nikiski.jpg" class="w-100" alt="City of Seldovia">
-          <p class="image-center">Nikiski Senior Centor<br>June 7th, 2023</p></div>
-       </div>
+       <div class="d-flex justify-content-between">
+         <div class="overflow animate__animated animate__fadeIn animate__slower rounded ">
+           <div class="image-container" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" @click="showPhoto('https://www.youtube.com/embed/YJjN8WPO6Es?&autoplay=1&playsinline=1')">
+            <img src="../images/Corporate/seldovia.jpg" class="w-100" alt="City of Seldovia">
+            <p class="image-center">City of Seldovia<br>June 13, 2023</p></div>
+          </div>
+          <div class="overflow animate__animated animate__fadeIn animate__slower align-items-center rounded">
+            <div class="image-container" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" @click="showPhoto('https://www.youtube.com/embed/G4GG0JC9v4M?&autoplay=1&playsinline=1')">
+              <img src="../images/Corporate/nikiski.jpg" class="w-100" alt="City of Seldovia">
+              <p class="image-center">Nikiski Senior Centor<br>June 7th, 2023</p></div>
+            </div>
+          </div>
     </div>
-    <div class="justify-content-center w3-center mb-5">
-      <button class="btn btn-primary text-center w-100 my-2"><a href="contact.html" style="all: unset;">Get a Quote!</a></button>
+    <div class="mb-3">
+      <button class="btn btn-primary text-center w-100"><a href="contact.html" style="all: unset;">Get a Quote!</a></button>
       </div>
  </div>
 

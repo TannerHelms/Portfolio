@@ -1,0 +1,11 @@
+.fa-circle-play {
+    display: none;
+}
+.fa-circle-play:hover {
+    display: block !important;
+}
+
+#slideImage:hover + .fa-circle-play {
+    display: block !important;
+    opacity: .6 !important;
+}
