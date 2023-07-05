@@ -1,11 +1,6 @@
 .fa-circle-play {
-    display: none;
+    opacity: .6 !important;
 }
 .fa-circle-play:hover {
-    display: block !important;
-}
-
-#slideImage:hover + .fa-circle-play {
-    display: block !important;
-    opacity: .6 !important;
+    opacity: 1 !important;
 }
