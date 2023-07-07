@@ -66,6 +66,7 @@
          <div class="container" style="margin-top: 150px">
             <h1 class="text-center text-white sans mb-4" style="letter-spacing: 1rem; font-size: 1.2rem;">- WEDDINGS -</h1>
          </div>
+         
          <div class="w3-content w3-display-container animate__animated animate__fadeIn animate__slower">
             <img src="../images/Wedding/main.webp" class="w-100" alt="mainImage"/>
             <p class=" text-white m-4 w3-justify weddingtxt" style="font-size: 1.3rem;">
@@ -127,10 +128,7 @@
             <div class="modal-dialog modal-fullscreen" role="document">
                <div class="modal-content">
                   <div class="modal-body">
-                     <div v-if="mainVideo === undefined" class="video-container d-flex  align-items-center justify-content-center" style="width: 100% !important">
-                        <h1 style="color: white; ">Coming soon...</h1>
-                     </div>
-                     <div v-else class="video-container">  
+                     <div class="video-container">  
                         <iframe :src="mainVideo" frameborder="0" allow="autoplay" allowfullscreen></iframe>
                      </div>
                      <div class="close-container rounded  d-flex justify-content-center" type="button" data-bs-dismiss="modal" aria-label="Close" @click="pause">
@@ -152,16 +150,16 @@
                      mainVideo : undefined,
                      weddings :[
                      {
-                         name : "CODY + KAIYA",
-                         date : "JULY 6TH, 2023",
                          image : "../images/Wedding/Cody&Kaiya.webp",
                          video: "https://www.youtube.com/embed/o0EvfvveYik?&autoplay=1&playsinline=1",
                        },
                        {
-                         name : "MAKAYLA + ANDREW",
-                         date : "MAY 27TH, 2023",
                          image : "../images/Wedding/Makayla&Andrew.webp",
                          video: "https://www.youtube.com/embed/gUR5WcuK3DE?&autoplay=1&playsinline=1",
+                       },
+                       {
+                         image : "../images/Wedding/lauren&ryen.webp",
+                         video: "https://www.youtube.com/embed/UlO7fb3N7LU?&autoplay=1&playsinline=1",
                        },
                      ]
                  }
