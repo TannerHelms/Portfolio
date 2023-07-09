@@ -239,11 +239,6 @@ hr {
 
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 1400px) {
-  .column {
-    -ms-flex: calc(33% - 20px);
-    flex: calc(33% - 20px);
-    max-width: calc(33% - 20px);
-  }
   
 }
 
