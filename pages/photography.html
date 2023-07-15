@@ -56,33 +56,33 @@
 
     
   <div class="container" style="margin-top: 150px">
-    <h1 class="text-center text-white fancy-text">PHOTOGRPHY</h1>
+    <h1 class="text-center text-white fancy-text">PHOTOGRAPHY</h1>
   </div>
 
 
   <!-- Photo Grid -->
 <div class="row m-4"> 
   <div class="column">
-    <div id="img-container" v-for="item in column1" class="rounded animate__animated animate__fadeIn animate__slower" type="button" @click="showPhoto" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      <img :src="item" style="width: 100%;">
+    <div id="img-container" v-for="item in column1" class="hidden" type="button" @click="showPhoto" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <img :data-src="item" style="width: 100%;">
     </div>
   </div>
 
   <div class="column">
-    <div id="img-container" v-for="item in column2" class="rounded animate__animated animate__fadeIn animate__slower" type="button" @click="showPhoto" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      <img :src="item" style="width: 100%;">
+    <div id="img-container" v-for="item in column2" class="hidden" type="button" @click="showPhoto" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <img :data-src="item" style="width: 100%;">
     </div>
   </div>  
 
   <div class="column">
-    <div id="img-container" v-for="item in column3" class="rounded animate__fadeIn animate__slower" type="button" @click="showPhoto" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      <img :src="item" style="width: 100%;">
+    <div id="img-container" v-for="item in column3" class="hidden" type="button" @click="showPhoto" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <img :data-src="item" style="width: 100%;">
     </div>
   </div>
 
   <div class="column">
-    <div id="img-container" v-for="item in column4" class="rounded animate__animated animate__fadeIn animate__slower" type="button" @click="showPhoto" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      <img :src="item" style="width: 100%;">
+    <div id="img-container" v-for="item in column4" class=" hidden" type="button" @click="showPhoto" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <img  :data-src="item" style="width: 100%;">
     </div>
   </div>
 </div>
@@ -103,49 +103,16 @@
 </div>
 
 </div>
+<script src="../ejs.min.js"></script>
 <script>
   const app = Vue.createApp({
       data() {
           return {
               mainPhoto : undefined,
-              column1 : [
-                "../images/Gallery/1.webp",
-                "../images/Gallery/37.webp",
-                "../images/Gallery/40.webp",
-                "../images/Gallery/35.webp",
-                "../images/Gallery/5.webp",
-                "../images/Gallery/28.webp",
-                
-                "../images/Gallery/13.webp",
-                
-                
-                
-              ],
-              column2 : [
-              "../images/Gallery/9.webp",
-              "../images/Gallery/2.webp",
-              "../images/Gallery/31.webp",
-              "../images/Gallery/32.webp",
-              "../images/Gallery/33.webp",
-              "../images/Gallery/34.webp",
-              "../images/Gallery/39.webp",
-              ],
-              column3 : [
-              "../images/Gallery/10.webp",
-              
-              "../images/Gallery/7.webp",
-              "../images/Gallery/15.webp",
-              "../images/Gallery/38.webp",
-              "../images/Gallery/41.webp",
-              "../images/Gallery/29.webp",
-              ],
-              column4 : [
-              "../images/Gallery/12.webp",
-               "../images/Gallery/4.webp",
-               "../images/Gallery/11.webp",
-               "../images/Gallery/30.webp",
-               "../images/Gallery/3.webp",
-              ],
+              column1 : [],
+              column2 : [],
+              column3 : [],
+              column4 : [],
           }
       },
 
@@ -154,8 +121,45 @@
             this.mainPhoto = event.target.src;
           }
         },
-      
+
+      created: function() {
+        let totalPhotos = 84;
+        let extraPhotos = 0;
+        while (totalPhotos % 4 != 0) {
+          totalPhotos--;
+          extraPhotos++
+        }
+        for (let i = 1; i <= totalPhotos; i += 4) {
+          this.column1.push(`../images/Gallery2/${i}.webp`)
+          this.column2.push(`../images/Gallery2/${i + 1}.webp`)
+          this.column3.push(`../images/Gallery2/${i + 2}.webp`)
+          this.column4.push(`../images/Gallery2/${i + 3}.webp`)
+        }
+        let columns = [this.column1, this.column2, this.column3, this.column4]
+        for (i = 1; i <= extraPhotos; i++) {
+          columns[i - 1].push(`../images/Gallery2/${totalPhotos + i}.webp`)
+        }
+        // this.column4.push(`../images/Gallery2/${53}.webp`)
+        // this.column2.push(`../images/Gallery2/${51}.webp`)
+        // this.column3.pop();
+      },
   }).mount('#app');
+
+  const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target.firstChild;
+          lazyImage.src = lazyImage.dataset.src;
+          entry.target.classList.add('show');
+        }  else {
+          entry.target.classList.remove('show');
+        }
+        })
+      })
+        const hiddenElements = document.querySelectorAll(".hidden")
+        hiddenElements.forEach((el) => observer.observe(el));
+
+ 
 </script>
 </body>
 </html>

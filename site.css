@@ -359,3 +359,31 @@ iframe {
   height: 100vh;
   transform: translate(-50%, -50%);
 }
+
+.hidden {
+  opacity: .1;
+  filter: blur(3px);
+  transform: translateX(-30%);
+  transition: all 1.5s;
+  scale: 90%;
+}
+
+@media only screen and (max-width: 800px) {
+  .hidden {
+    transform: none !important;
+    filter: none !important;
+    opacity: .2 ;
+  }
+  .show {
+    transform: translateY(0) !important;
+  }
+}
+
+
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+  scale: 100%;
+}
